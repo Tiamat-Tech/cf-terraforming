@@ -1,11 +1,5 @@
 on:
-  pull_request_target:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
-      - review_requested 
+  pull_request:
     paths-ignore:
       - 'README.md'
       - 'CHANGELOG.md'
@@ -22,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: setup Terraform
+        uses: hashicorp/setup-terraform@v3
       - name: validate generated terraform configuration
         run: make validate-tf
