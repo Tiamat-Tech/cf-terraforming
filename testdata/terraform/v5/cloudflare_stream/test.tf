@@ -1,5 +1,6 @@
 resource "cloudflare_stream" "terraform_managed_resource" {
   account_id = "f037e56e89293a057740de681ac9abbe"
+  uid        = "114a2ce1d6404540ebf02d6dae9fe867"
   meta = jsonencode({
     filename     = "Screenshot 2025-02-19 at 7.57.08\u202fPM.png"
     filetype     = "image/png"
@@ -8,4 +9,3 @@ resource "cloudflare_stream" "terraform_managed_resource" {
     type         = "image/png"
   })
 }
-
